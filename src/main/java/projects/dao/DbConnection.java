@@ -26,11 +26,7 @@ public class DbConnection {
 			return conn;
 		} catch (Exception e) {
 			System.out.println("Failed to connect.");
-			throw new DbException(e);
-			
+			throw new DbException(e);		
 		}
-
-	
-		
 	}
 }	

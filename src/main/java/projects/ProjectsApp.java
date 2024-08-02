@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
-
 import project.entity.Project;
 import projects.exception.DbException;
 import projects.service.ProjectService;
@@ -28,6 +27,8 @@ public class ProjectsApp {
 		new ProjectsApp().processUserSelections();
 	}
 
+// Repeatedly gets user input and processes their selections.	
+	
 	private void processUserSelections() {
 	
 		boolean done = false;
@@ -54,6 +55,8 @@ public class ProjectsApp {
 			}		
 		}
 	}
+
+// Collects project details from user and prints successful project creation message.	
 	
 	private void createProject() {
 		String projectName = getStringInput("Enter the project name");
@@ -75,6 +78,8 @@ public class ProjectsApp {
 		
 	}
 	
+// Gets decimal input from user.	
+	
 	private BigDecimal getDecimalInput(String prompt) {
 		String input = getStringInput(prompt);
 		
@@ -89,11 +94,15 @@ public class ProjectsApp {
 		}
 	}
 	
+// Prints exit menu message.	
+	
 	private boolean exitMenu() {
 		System.out.println("Exiting the menu.");
 		return true;
 	}
 
+// Gets user to make selection.	
+	
 	private int getUserSelection() {
 		printOperations();
 		
@@ -102,7 +111,10 @@ public class ProjectsApp {
 		return Objects.isNull(input) ? -1 : input;
 	}
 
+// Prints list of options for user to select.	
+	
 	private void printOperations() {
+
 		
 		System.out.println("\nThese are the available selections. Press the Enter key to quit:");
 		
@@ -113,6 +125,8 @@ public class ProjectsApp {
 		
 	}
 
+// Gets integer input from user.	
+	
 	private Integer getIntInput(String prompt) {
 		String input = getStringInput(prompt);
 		if(Objects.isNull(input)) {
@@ -126,6 +140,8 @@ public class ProjectsApp {
 		}
 	}
 	
+// Gets string input from user.	
+	
 	private String getStringInput(String prompt) {
 		System.out.println(prompt + ": ");
 		String input = scanner.nextLine();
@@ -133,28 +149,3 @@ public class ProjectsApp {
 	
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
