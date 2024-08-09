@@ -42,3 +42,4 @@ CREATE TABLE material (
 	cost DECIMAL(7,2),
 	FOREIGN KEY (project_id) REFERENCES project(project_id) ON DELETE CASCADE
 );
+
