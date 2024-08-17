@@ -15,7 +15,7 @@ CREATE TABLE project (
 
 CREATE TABLE category (
 	category_id INT AUTO_INCREMENT PRIMARY KEY,
-	category_name VARCHAR(128) NOT NULL
+	category_name VARCHAR(128) NOT null
 );
 
 CREATE TABLE project_category (
@@ -35,7 +35,7 @@ CREATE TABLE step (
 );
 
 CREATE TABLE material (
-	material_id INT NOT NULL PRIMARY KEY,
+	material_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	project_id INT NOT NULL,
 	material_name VARCHAR(128) NOT NULL,
 	num_required INT,

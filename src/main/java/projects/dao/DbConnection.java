@@ -15,14 +15,15 @@ public class DbConnection {
 	
 
 	public static Connection getConnection() {
-		String url = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false", HOST, PORT, SCHEMA,
+		String uri = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s", HOST, PORT, SCHEMA,
 				USER, PASSWORD);
 
-		System.out.println("Connecting with url=" + url);
+		System.out.println("Connecting with url=" + uri);
 
 		try {
-			Connection conn = DriverManager.getConnection(url);
+			Connection conn = DriverManager.getConnection(uri);
 			System.out.println("Successfully obtained connection!");
+			conn.setAutoCommit(false);
 			return conn;
 		} catch (Exception e) {
 			System.out.println("Failed to connect.");
